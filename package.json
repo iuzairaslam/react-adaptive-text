@@ -1,6 +1,6 @@
 {
   "name": "@iuzairaslam/react-adaptive-text",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Readable text on any background—WCAG & APCA aware React components and color helpers (TypeScript).",
   "main": "dist/index.js",
   "module": "dist/index.js",

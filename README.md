@@ -7,18 +7,14 @@
 
 ![react-adaptive-text — readable text on any background](./assets/readme-banner.png)
 
-## In plain English
+You pick a background color; this library picks a **foreground** color so the copy stays readable—without manually choosing white vs black on every surface. It uses WCAG-minded contrast math, with optional APCA when you want a more perceptual read.
 
-You pick a background color. This library picks a **foreground color** so people can actually read the text—no more guessing “should this be white or black?” It follows accessibility-minded math (WCAG-style contrast, plus optional APCA for a more perceptual take). You get simple React building blocks so you’re not wiring color logic by hand in every screen.
+- **`AdaptiveText`** — text-style element that sets `color` from the background (and optional brand palette).
+- **`AdaptiveTextTheme`** — define background and algorithm once for a subtree.
+- **`useAdaptiveForegroundColor`** — the same resolution for icons, strokes, or custom markup.
+- **Helpers** — luminance, contrast ratio, APCA, palette selection (tests, tooling, or your own components).
 
-## If you’re shipping UI
-
-- **`AdaptiveText`** — like a text element, but it sets `color` for you from the background (and optional brand palette).
-- **`AdaptiveTextTheme`** — set background + algorithm once; children inherit the rules.
-- **`useAdaptiveForegroundColor`** — same color resolution for icons, strokes, or anything that isn’t plain text.
-- **Pure helpers** — luminance, contrast ratio, APCA, palette picking—useful for tests, design tooling, or custom components.
-
-TypeScript throughout; no native binaries—just React and browser-friendly color parsing.
+TypeScript, no native binaries—React plus browser-friendly color parsing.
 
 ## Install
 
@@ -42,7 +38,7 @@ export function Banner() {
 }
 ```
 
-### Theme (DRY): one background for a whole block
+### Theme
 
 ```tsx
 import { AdaptiveTextTheme, AdaptiveText } from '@iuzairaslam/react-adaptive-text';
@@ -61,7 +57,7 @@ export function Card() {
 }
 ```
 
-### Palette: pick the best brand color for contrast
+### Palette
 
 ```tsx
 import { AdaptiveText, ContrastAlgorithm } from '@iuzairaslam/react-adaptive-text';
