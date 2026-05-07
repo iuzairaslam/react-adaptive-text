@@ -1,7 +1,7 @@
 {
   "name": "@iuzairaslam/react-adaptive-text",
-  "version": "1.0.3",
-  "description": "Picks a legible text color from a background (WCAG 2.1 + optional APCA). AdaptiveText, context theme, zero native code.",
+  "version": "1.0.4",
+  "description": "Readable text on any background—WCAG & APCA aware React components and color helpers (TypeScript).",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,7 +20,8 @@
     "src",
     "!src/**/__tests__/**",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "assets"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",

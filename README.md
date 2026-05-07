@@ -5,12 +5,20 @@
 [![npm](https://img.shields.io/npm/v/@iuzairaslam/react-adaptive-text.svg)](https://www.npmjs.com/package/@iuzairaslam/react-adaptive-text)
 [![CI](https://github.com/iuzairaslam/react-adaptive-text/actions/workflows/ci.yml/badge.svg)](https://github.com/iuzairaslam/react-adaptive-text/actions/workflows/ci.yml)
 
-Ever put text on a colored card and realize it’s hard to read? **react-adaptive-text** picks a readable **foreground** color from a **background** (WCAG 2.1 luminance, optional APCA), and gives you:
+![react-adaptive-text — readable text on any background](./assets/readme-banner.png)
 
-- **`AdaptiveText`**: a drop-in text-ish element that sets `style.color` automatically
-- **`AdaptiveTextTheme`**: provide background/palette/algorithm once for a subtree
-- **`useAdaptiveForegroundColor`**: use the same color resolution for icons/custom UI
-- **Pure helpers**: luminance, contrast ratio, APCA, palette selection
+## In plain English
+
+You pick a background color. This library picks a **foreground color** so people can actually read the text—no more guessing “should this be white or black?” It follows accessibility-minded math (WCAG-style contrast, plus optional APCA for a more perceptual take). You get simple React building blocks so you’re not wiring color logic by hand in every screen.
+
+## If you’re shipping UI
+
+- **`AdaptiveText`** — like a text element, but it sets `color` for you from the background (and optional brand palette).
+- **`AdaptiveTextTheme`** — set background + algorithm once; children inherit the rules.
+- **`useAdaptiveForegroundColor`** — same color resolution for icons, strokes, or anything that isn’t plain text.
+- **Pure helpers** — luminance, contrast ratio, APCA, palette picking—useful for tests, design tooling, or custom components.
+
+TypeScript throughout; no native binaries—just React and browser-friendly color parsing.
 
 ## Install
 
@@ -34,7 +42,7 @@ export function Banner() {
 }
 ```
 
-### Theme
+### Theme (DRY): one background for a whole block
 
 ```tsx
 import { AdaptiveTextTheme, AdaptiveText } from '@iuzairaslam/react-adaptive-text';
@@ -53,7 +61,7 @@ export function Card() {
 }
 ```
 
-### Palette (brand colors)
+### Palette: pick the best brand color for contrast
 
 ```tsx
 import { AdaptiveText, ContrastAlgorithm } from '@iuzairaslam/react-adaptive-text';
@@ -75,12 +83,13 @@ export function BrandLine() {
 
 ## Notes
 
-- Colors are accepted as CSS color strings. Hex and `rgb()/rgba()` are supported in all environments; in the browser, most named colors also work.
-- `AdaptiveText` defaults to rendering a `span`. Use `as="p" | "h1" | ...` when needed.
+- Pass colors as CSS strings: hex and `rgb()` / `rgba()` work everywhere; in the browser, named colors usually work too.
+- By default **`AdaptiveText`** renders a **`span`**. Use `as="p"`, `as="h1"`, etc. when you need semantic headings or paragraphs.
+- If you set **`style.color`** yourself, that always wins—useful when you intentionally override the automatic choice.
 
 ## Repository
 
-Source and issue tracker: [github.com/iuzairaslam/react-adaptive-text](https://github.com/iuzairaslam/react-adaptive-text).
+Issues and source: [github.com/iuzairaslam/react-adaptive-text](https://github.com/iuzairaslam/react-adaptive-text).
 
 ## Development
 
@@ -90,17 +99,8 @@ npm test
 npm run build
 ```
 
-Run the interactive example app (Vite):
+Try the included Vite example (interactive demos):
 
 ```bash
 npm run dev:example
 ```
-
-## Publishing (maintainers)
-
-1. Bump the version in `package.json`, commit, and tag: `git tag v1.0.x && git push origin v1.0.x`.
-2. **From npm:** log in with `npm login`, run `npm run test:all`, then `npm publish` (or `npm run publish:npm`).
-3. **CI:** add an `NPM_TOKEN` [repository secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions). Pushing a tag matching `v*` runs `.github/workflows/publish.yml` and publishes to the public npm registry.
-
-This package is [scoped](https://docs.npmjs.com/about-scopes-and-packages) (`@iuzairaslam/...`). `publishConfig.access` is `public`, so `npm publish` installs for everyone without an npm org. The `publish:github` script is only needed if you also mirror to GitHub Packages.
-
