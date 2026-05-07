@@ -4,11 +4,21 @@
   "description": "Picks a legible text color from a background (WCAG 2.1 + optional APCA). AdaptiveText, context theme, zero native code.",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "source": "src/index.ts",
   "types": "dist/index.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
     "src",
+    "!src/**/__tests__/**",
     "README.md",
     "LICENSE"
   ],
@@ -16,9 +26,12 @@
     "build": "tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build",
     "test": "jest",
+    "test:all": "npm run typecheck && npm test && npm run build",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "typescript": "npm run typecheck",
-    "dev:example": "npm install --prefix example && npm run dev --prefix example"
+    "dev:example": "npm install --prefix example && npm run dev --prefix example",
+    "publish:npm": "npm publish --registry=https://registry.npmjs.org --access public",
+    "publish:github": "npm publish --registry=https://npm.pkg.github.com"
   },
   "keywords": [
     "react",
@@ -36,7 +49,10 @@
     "text-color",
     "color",
     "palette",
-    "typescript"
+    "typescript",
+    "react-dom",
+    "vite",
+    "nextjs"
   ],
   "author": {
     "name": "Muhammad Uzair Aslam",
@@ -45,15 +61,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iuzairaslam/react-native-adaptive-text.git"
+    "url": "git+https://github.com/iuzairaslam/react-adaptive-text.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
-  "homepage": "https://github.com/iuzairaslam/react-native-adaptive-text#readme",
+  "homepage": "https://github.com/iuzairaslam/react-adaptive-text#readme",
   "bugs": {
-    "url": "https://github.com/iuzairaslam/react-native-adaptive-text/issues"
+    "url": "https://github.com/iuzairaslam/react-adaptive-text/issues"
   },
   "peerDependencies": {
     "react": ">=18.0.0"
