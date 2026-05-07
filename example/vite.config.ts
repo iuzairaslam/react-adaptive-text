@@ -11,7 +11,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      'react-adaptive-text': path.resolve(__dirname, '../src/index.ts'),
+      '@iuzairaslam/react-adaptive-text': path.resolve(
+        __dirname,
+        '../src/index.ts',
+      ),
     },
   },
   server: {

@@ -5,7 +5,7 @@ import {
   adaptiveRgb,
   hexToRgb,
   rgbToHex,
-} from 'react-adaptive-text';
+} from '@iuzairaslam/react-adaptive-text';
 
 import './styles.css';
 
@@ -64,7 +64,7 @@ export default function HomeScreen({ onNavigate }: Props): JSX.Element {
         <div className="demo-hero-pill" style={{ color: heroPillText }}>
           REACT PACKAGE
         </div>
-        <h1 className="demo-hero-title">react-adaptive-text</h1>
+        <h1 className="demo-hero-title">@iuzairaslam/react-adaptive-text</h1>
         <p className="demo-hero-subtitle">
           Smart text color that stays readable — WCAG 2.1 and APCA, DOM-friendly
           (pure TypeScript helpers + components).

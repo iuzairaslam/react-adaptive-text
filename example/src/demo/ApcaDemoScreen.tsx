@@ -1,7 +1,12 @@
 import type { JSX } from 'react';
 import { useMemo, useState } from 'react';
 
-import { AdaptiveText, getApcaContrast, getContrastRatio, hexToRgb } from 'react-adaptive-text';
+import {
+  AdaptiveText,
+  getApcaContrast,
+  getContrastRatio,
+  hexToRgb,
+} from '@iuzairaslam/react-adaptive-text';
 
 import './styles.css';
 
@@ -33,7 +38,7 @@ export default function ApcaDemoScreen({ onBack }: Props): JSX.Element {
     return getApcaContrast(a, b);
   }, [fg, bg]);
 
-  const pkg = 'react-adaptive-text';
+  const pkg = '@iuzairaslam/react-adaptive-text';
 
   return (
     <DemoScreenChrome title="WCAG vs APCA" onBack={onBack}>

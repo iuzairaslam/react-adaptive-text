@@ -1,7 +1,13 @@
 import type { JSX } from 'react';
 import { useMemo, useState } from 'react';
 
-import { BLACK, WHITE, adaptiveRgb, hexToRgb, rgbToHex } from 'react-adaptive-text';
+import {
+  BLACK,
+  WHITE,
+  adaptiveRgb,
+  hexToRgb,
+  rgbToHex,
+} from '@iuzairaslam/react-adaptive-text';
 
 import './styles.css';
 
@@ -42,7 +48,7 @@ export default function ExtensionDemoScreen({
     };
   }, [hex]);
 
-  const pkg = 'react-adaptive-text';
+  const pkg = '@iuzairaslam/react-adaptive-text';
 
   return (
     <DemoScreenChrome title="adaptiveRgb" onBack={onBack}>

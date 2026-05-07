@@ -1,6 +1,8 @@
 # react-adaptive-text
 
-[![npm](https://img.shields.io/npm/v/react-adaptive-text.svg)](https://www.npmjs.com/package/react-adaptive-text)
+**npm package:** `@iuzairaslam/react-adaptive-text`
+
+[![npm](https://img.shields.io/npm/v/@iuzairaslam/react-adaptive-text.svg)](https://www.npmjs.com/package/@iuzairaslam/react-adaptive-text)
 [![CI](https://github.com/iuzairaslam/react-adaptive-text/actions/workflows/ci.yml/badge.svg)](https://github.com/iuzairaslam/react-adaptive-text/actions/workflows/ci.yml)
 
 Ever put text on a colored card and realize it’s hard to read? **react-adaptive-text** picks a readable **foreground** color from a **background** (WCAG 2.1 luminance, optional APCA), and gives you:
@@ -13,13 +15,13 @@ Ever put text on a colored card and realize it’s hard to read? **react-adaptiv
 ## Install
 
 ```bash
-npm install react-adaptive-text
+npm install @iuzairaslam/react-adaptive-text
 ```
 
 ## Basic usage
 
 ```tsx
-import { AdaptiveText } from 'react-adaptive-text';
+import { AdaptiveText } from '@iuzairaslam/react-adaptive-text';
 
 export function Banner() {
   return (
@@ -35,7 +37,7 @@ export function Banner() {
 ### Theme
 
 ```tsx
-import { AdaptiveTextTheme, AdaptiveText } from 'react-adaptive-text';
+import { AdaptiveTextTheme, AdaptiveText } from '@iuzairaslam/react-adaptive-text';
 
 export function Card() {
   return (
@@ -54,7 +56,7 @@ export function Card() {
 ### Palette (brand colors)
 
 ```tsx
-import { AdaptiveText, ContrastAlgorithm } from 'react-adaptive-text';
+import { AdaptiveText, ContrastAlgorithm } from '@iuzairaslam/react-adaptive-text';
 
 const brand = ['#ff9800', '#eeeeee', '#ffeb3b'];
 
@@ -100,5 +102,5 @@ npm run dev:example
 2. **From npm:** log in with `npm login`, run `npm run test:all`, then `npm publish` (or `npm run publish:npm`).
 3. **CI:** add an `NPM_TOKEN` [repository secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions). Pushing a tag matching `v*` runs `.github/workflows/publish.yml` and publishes to the public npm registry.
 
-GitHub Packages (`npm run publish:github`) normally requires a [scoped](https://docs.npmjs.com/about-scopes-and-packages) package name; this package is unscoped, so publishing to npmjs is the default path.
+This package is [scoped](https://docs.npmjs.com/about-scopes-and-packages) (`@iuzairaslam/...`). `publishConfig.access` is `public`, so `npm publish` installs for everyone without an npm org. The `publish:github` script is only needed if you also mirror to GitHub Packages.
 

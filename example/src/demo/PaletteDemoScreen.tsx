@@ -9,7 +9,7 @@ import {
   getContrastRatio,
   hexToRgb,
   rgbToHex,
-} from 'react-adaptive-text';
+} from '@iuzairaslam/react-adaptive-text';
 
 import './styles.css';
 
@@ -62,7 +62,7 @@ export default function PaletteDemoScreen({ onBack }: Props): JSX.Element {
     [fgRgb, previewRgb],
   );
 
-  const pkg = 'react-adaptive-text';
+  const pkg = '@iuzairaslam/react-adaptive-text';
 
   return (
     <DemoScreenChrome title="Palette-aware" onBack={onBack}>

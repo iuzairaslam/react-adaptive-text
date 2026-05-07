@@ -15,7 +15,7 @@ import {
   meetsWcag,
   rgbToHex,
   useAdaptiveForegroundColor,
-} from 'react-adaptive-text';
+} from '@iuzairaslam/react-adaptive-text';
 
 import './styles.css';
 
@@ -83,7 +83,7 @@ export default function WidgetDemoScreen({ onBack }: Props): JSX.Element {
     [metrics.fgRgb],
   );
 
-  const pkg = 'react-adaptive-text';
+  const pkg = '@iuzairaslam/react-adaptive-text';
 
   return (
     <DemoScreenChrome title="AdaptiveText" onBack={onBack}>
